@@ -119,7 +119,7 @@ final class Env {
 			break;
 		}
 
-		$value = $default;
+		$value = NULL;
 		foreach($poolOfNames as $name) {
 			$value = self::get($name);
 			if($value) {
@@ -127,7 +127,7 @@ final class Env {
 			}
 		}
 
-		return $value;
+		return $value ?? $default;
 	}
 
 	/**
